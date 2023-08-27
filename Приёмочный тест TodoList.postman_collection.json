@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "cc6b2411-50f4-4455-9f88-432655ec4142",
+		"name": "Приёмочный тест TodoList",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27386186",
+		"_collection_link": "https://red-sunset-555644.postman.co/workspace/Team-Workspace~d02ba6ac-3463-408d-8784-a454bc6111e7/collection/27386186-cc6b2411-50f4-4455-9f88-432655ec4142?action=share&creator=27386186&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Получение списка задач",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "https://sky-todo-list.herokuapp.com"
+					},
+					{
+						"key": "Referer",
+						"value": "https://sky-todo-list.herokuapp.com/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Mobile Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?1"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Android\""
+					}
+				],
+				"url": {
+					"raw": "https://todo-app-sky.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"todo-app-sky",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление новой задачи",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://sky-todo-list.herokuapp.com"
+					},
+					{
+						"key": "Referer",
+						"value": "https://sky-todo-list.herokuapp.com/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Mobile Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?1"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Android\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"купить вино\",\"completed\":false}"
+				},
+				"url": {
+					"raw": "https://todo-app-sky.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"todo-app-sky",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Новая задача в обновлённом списке задач",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "https://sky-todo-list.herokuapp.com"
+					},
+					{
+						"key": "Referer",
+						"value": "https://sky-todo-list.herokuapp.com/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Mobile Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?1"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Android\""
+					}
+				],
+				"url": {
+					"raw": "https://todo-app-sky.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"todo-app-sky",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Задача выполнена",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://sky-todo-list.herokuapp.com"
+					},
+					{
+						"key": "Referer",
+						"value": "https://sky-todo-list.herokuapp.com/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Mobile Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?1"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Android\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"completed\":true}"
+				},
+				"url": {
+					"raw": "https://todo-app-sky.herokuapp.com/78401",
+					"protocol": "https",
+					"host": [
+						"todo-app-sky",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"78401"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "В списке задач отмечена как выполненная",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "https://sky-todo-list.herokuapp.com"
+					},
+					{
+						"key": "Referer",
+						"value": "https://sky-todo-list.herokuapp.com/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Mobile Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?1"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Android\""
+					}
+				],
+				"url": {
+					"raw": "https://todo-app-sky.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"todo-app-sky",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление задачи",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "https://sky-todo-list.herokuapp.com"
+					},
+					{
+						"key": "Referer",
+						"value": "https://sky-todo-list.herokuapp.com/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Mobile Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?1"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Android\""
+					}
+				],
+				"url": {
+					"raw": "https://todo-app-sky.herokuapp.com/78407",
+					"protocol": "https",
+					"host": [
+						"todo-app-sky",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"78407"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "В списке задач удаленной задачи нет",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Origin",
+						"value": "https://sky-todo-list.herokuapp.com"
+					},
+					{
+						"key": "Referer",
+						"value": "https://sky-todo-list.herokuapp.com/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "cross-site"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Mobile Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Google Chrome\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?1"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Android\""
+					}
+				],
+				"url": {
+					"raw": "https://todo-app-sky.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"todo-app-sky",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

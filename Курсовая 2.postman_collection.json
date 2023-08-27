@@ -1,0 +1,597 @@
+{
+	"info": {
+		"_postman_id": "e29bb4ee-52b7-4ac0-a93e-7a0a97b95c26",
+		"name": "Курсовая 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27386186",
+		"_collection_link": "https://red-sunset-555644.postman.co/workspace/Team-Workspace~d02ba6ac-3463-408d-8784-a454bc6111e7/collection/27386186-e29bb4ee-52b7-4ac0-a93e-7a0a97b95c26?action=share&creator=27386186&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Получение расписания",
+			"item": [
+				{
+					"name": "Получение расписания",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"from\": \"2023-06-01T00:00:00=00:00\",\n    \"till\": \"2024-02-01T23:59:59=00:00\",\n    \"onlyTypes\": [\n        \"slot\",\n        \"event\"\n    ],\n    \"statuses\": [\n        \"winhout_status\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/events",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Создание личных событий",
+			"item": [
+				{
+					"name": "Создание события с валидными значениями на следующей неделе",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"idFutureWeek\"",
+									"var value = pm.response.json().data.payload.id",
+									"",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startAt\": \"2023-07-18T12:00:00+03:00\",\n    \"endAt\": \"2023-07-18T12:30:00+03:00\",\n    \"title\": \"ДАА\",\n    \"description\": null,\n    \"color\": \"#ffff00\",\n    \"backgroundColor\": \"#808080\"\n}\n\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/createPersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события с валидными значениями в следующем месяце",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"idFutureMonth\"",
+									"var value = pm.response.json().data.payload.id",
+									"",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startAt\": \"2023-08-05T10:00:00+03:00\",\n    \"endAt\": \"2023-08-05T11:00:00+03:00\",\n    \"title\": \"DAA\",\n    \"description\": \"Лаба\",\n    \"color\": \"#00ff00\",\n    \"backgroundColor\": \"#808080\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/createPersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события с валидными значениями в прошлом",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"idPastWeek\"",
+									"var value = pm.response.json().data.payload.id",
+									"",
+									"pm.collectionVariables.set(key, value)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startAt\": \"2023-06-25T01:00:00+03:00\",\n    \"endAt\": \"2023-06-25T03:00:00+03:00\",\n    \"title\": \"ДАА\",\n    \"description\": null,\n    \"color\": \"#800080\",\n    \"backgroundColor\": \"#808080\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/createPersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события с невалидными значениями названия и описания в следующем месяце",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startAt\": \"2023-07-16T04:00:00+03:00\",\n    \"endAt\": \"2023-07-16T06:55:00+03:00\",\n    \"title\": \"%%%%%%%%№№№№№№№№\",\n    \"description\": \"&&&&&&&^^^^**\",\n    \"color\": \"#ffff00\",\n    \"backgroundColor\": \"#808080\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/createPersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события в тоже время, когда уже есть личное событие",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startAt\": \"2023-07-18T12:00:00+03:00\",\n    \"endAt\": \"2023-07-18T12:30:00+03:00\",\n    \"title\": \"ДАА повтор\",\n    \"description\": \"ПОВТОР СОБЫТИЯ\",\n    \"color\": \"#ffff00\",\n    \"backgroundColor\": \"#808080\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/createPersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание личного события с несуществующей датой",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startAt\": \"2023-15-11T17:00:00+03:00\",\n    \"endAt\": \"2023-15-11T18:30:00+03:00\",\n    \"title\": \"ДАА\",\n    \"description\": null,\n    \"color\": \"#add8e6\",\n    \"backgroundColor\": \"#808080\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/createPersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"createPersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Редактирование личных событий",
+			"item": [
+				{
+					"name": "Изменение только названия события",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startAt\": \"2023-07-15T12:00:00+03:00\",\n    \"endAt\": \"2023-07-15T12:30:00+03:00\",\n    \"title\": \"ДАА45121\",\n    \"description\": null,\n    \"color\": \"#ffff00\",\n    \"backgroundColor\": \"#808080\",\n    \"id\": {{idFutureWeek}},\n    \"oldStartAt\": \"2023-07-15T12:00:00+03:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/updatePersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Изменение только даты события",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startAt\": \"2023-08-02T10:00:00+03:00\",\n    \"endAt\": \"2023-08-02T11:00:00+03:00\",\n    \"title\": \"DAA\",\n    \"description\": \"Лаба\",\n    \"color\": \"#00ff00\",\n    \"backgroundColor\": \"#808080\",\n    \"id\": {{idFutureMonth}},\n    \"oldStartAt\": \"2023-08-05T10:00:00+03:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/updatePersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Изменение только описания события",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"startAt\": \"2023-07-15T12:00:00+03:00\",\n    \"endAt\": \"2023-07-15T12:30:00+03:00\",\n    \"title\": \"ДАА\",\n    \"description\": \"Делать дело!\",\n    \"color\": \"#ffff00\",\n    \"backgroundColor\": \"#808080\",\n    \"id\": {{idFutureWeek}},\n    \"oldStartAt\": \"2023-07-15T12:00:00+03:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/updatePersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"updatePersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Удаление события",
+			"item": [
+				{
+					"name": "Удаление личного события из прошлого",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {{idPastWeek}},\n    \"startAt\": \"2023-06-25T01:00:00+03:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/removePersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"removePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление личного события из будущего",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {{idFutureWeek}},\n    \"startAt\": \"2023-07-15T12:00:00+03:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/removePersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"removePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление несуществующего события",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 99999999,\n    \"startAt\": \"2023-07-15T12:00:00+03:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/removePersonal",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"removePersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token_global}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "https://api-teachers.skyeng.ru/v2/schedule",
+			"type": "string"
+		},
+		{
+			"key": "token_global",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0NTk2OTMzLCJpZGVudGl0eSI6InRlc3QudHN0MzE3QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDMxN0Bza3llbmcucnUiLCJpZGVudGl0eVBob25lIjpudWxsLCJuYW1lIjoidGVzdCIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDMxN0Bza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6IlpsVWdscEVEcXJsMFd1VVZnSkFlWGNzcDhuSmlwTmQwIiwiYnJhbmQiOm51bGwsImV4cCI6MTY4OTA3NzAyMywiYXZhdGFyVXJsIjoiaHR0cHM6XC9cL2F1dGgtYXZhdGFycy1za3llbmcuaW1naXgubmV0XC8xNDU5NjkzM1wvOThmNmJlYjUtZjA3Yi00MWViLThiYzItNDU3MTQwYTc0ODgzP2F1dG89Zm9ybWF0JTJDZW5oYW5jZSZmaXQ9Y3JvcCZoPTIwMCZpeGxpYj1waHAtMi4xLjEmcT03NSZzYXQ9OCZzaGFycD0xMCZ2aWI9OCZ3PTIwMCIsImFJc1N0cm9uZyI6dHJ1ZSwiYVR5cGUiOiJVU0VSTkFNRV9QQVNTV09SRCIsImFUaW1lIjoxNjg4OTA3ODIxLCJyb2xlcyI6WyJST0xFX1RFQUNIRVJfQ0FORElEQVRFIiwiUk9MRV9URUFDSEVSX0NBTkRJREFURV9CQVNFX0FDQ0VTUyIsIlJPTEVfVFRDX1VTQUdFIiwiUk9MRV9WSU1CT1hfVEVBQ0hFUl9VU0FHRSIsIlJPTEVfVEVBQ0hFUiIsIlJPTEVfQ1JNMl9URUFDSEVSX0FDQ0VTUyIsIlJPTEVfTUFUSF9URUFDSEVSIiwiUk9MRV9NQVRIX0NPTlRFTlRfVEhFTUVfVklFVyJdfQ.UntqfLtQsEIn3ZXjOxC3DmTcEt2gcEehPAimWLj5NLepLKf0dTvegpCCXC6Nv4X_XGHlkToi-nnrqrVvzFNqWK8BbrvixUUv6bmNbJX_SqsLGnZIFNYn8KS2uZ_tHXzrKYq_E9ivyxzdUccCdom3Qa2LtowXmtkfvCNs7JltxEL7E1_V5OwIVDx1RL6MkBEH287Hk7BYOpkXGFT9FYb3qKpb6Dw6Pje3ihMBvIhy9xz3zEKircuRcsknnIMOlr_KUNbAuXOVkKcjnUuJBseCDc72kQth0xdLpALb2kmzz88QiMdAIs_9n_z_LRGrUfYm-RvSISbUMHOZILXA8mD2kFnVNJstdv6l41YYP1d-vF46OLPseqqVg43X0lSirpGww4Kvkq0OannKFJGF-cOW4rDMVrwGdYgodtCLsZbxOno78WfUoVT1IL2UEhVc5vQcG7PJPihPI-bdaR0Ax47EqjyES7JtS3Wv6w2wT5wgefm6lWOS_VlKmitEgxYS152x2WU2741uvJ58TPIjA4vy244tyVQtRNh90FeNNQ6v-DMRC5XrPANVnOkpZEu5lJvIbWpLrxYDBnZ_cLPZmcEY0MkPd44mtybiYk81xe7qdXWi38Y4poqijZSuUbdfd4RPZThe5csntZOaw6qwgVP702FIA4tXG6lydgBlYsQSIZU",
+			"type": "string"
+		},
+		{
+			"key": "idFutureWeek",
+			"value": 83322704
+		},
+		{
+			"key": "idFutureMonth",
+			"value": 83322705
+		},
+		{
+			"key": "idPastWeek",
+			"value": 83322706
+		},
+		{
+			"key": "idRepeat",
+			"value": 83330757
+		}
+	]
+}
