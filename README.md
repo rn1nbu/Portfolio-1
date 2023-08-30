@@ -38,6 +38,9 @@
 
 Тестовое заданиею Финал первого курса: https://docs.google.com/document/d/1sfu9s0IXcK6wZCYbvQV1SdgjKxfOlZ3EEkwTTqkdLxA/edit?usp=sharing
 
+Тестовое задание API: https://docs.google.com/spreadsheets/d/16MX-xiAyZrVH3EMojCvcRrv6hOYUiFvAMS-h5EvEyJQ/edit?usp=sharing
+
+SQL финальное задание: https://docs.google.com/document/d/1QAsDM9UkGnROmSSZoiNbAxbkmXHTww3lUZDWcqEEdU8/edit?usp=sharing
 
 ---
 ##### Мой телефон: +7(911)401-48-18
