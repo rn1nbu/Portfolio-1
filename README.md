@@ -34,7 +34,9 @@
 Сайт: teachers.skyeng.ru.
 
 ---
-#### Сылка на мой Гугл диск:
+#### Мой Гугл диск:
+
+Тестовое заданиею Финал первого курса: https://docs.google.com/document/d/1sfu9s0IXcK6wZCYbvQV1SdgjKxfOlZ3EEkwTTqkdLxA/edit?usp=sharing
 
 
 ---
