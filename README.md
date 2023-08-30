@@ -32,6 +32,8 @@
 Продукт: веб-приложение для учителей от Skyeng через API.
 Заказчик: команда Skyeng.
 Сайт: teachers.skyeng.ru.
+>>
+>> Ссылка на курсовую работу 1 и2: https://rn1nbu.atlassian.net/l/cp/iW821Xzo
 
 ---
 #### Мой Гугл диск:
@@ -42,7 +44,6 @@
 
 SQL финальное задание: https://docs.google.com/document/d/1QAsDM9UkGnROmSSZoiNbAxbkmXHTww3lUZDWcqEEdU8/edit?usp=sharing
 
-Курсовая работа 1 и2: https://rn1nbu.atlassian.net/l/cp/iW821Xzo
 
 ---
 ##### Мой телефон: +7(911)401-48-18
