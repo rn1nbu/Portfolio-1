@@ -46,6 +46,8 @@
 
 SQL финальное задание: https://docs.google.com/document/d/1QAsDM9UkGnROmSSZoiNbAxbkmXHTww3lUZDWcqEEdU8/edit?usp=sharing
 
+Курсовая работа 1 и 2: https://docs.google.com/document/d/1Wv6vdkkdRUodK0AfazUfAucIkFKOKBEG/edit?usp=sharing&ouid=108440150620483644563&rtpof=true&sd=true
+
 
 ---
 ##### Мой телефон: +7(911)401-48-18
