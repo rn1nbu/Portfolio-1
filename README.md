@@ -52,7 +52,7 @@ SQL финальное задание: https://docs.google.com/document/d/1QAsDM
 
 Курсовая работа 1 и 2: https://docs.google.com/document/d/1fv9FenIAJhPHnNGTzEk_Rb8QqjVAemT1oPTtoD495wc/edit?usp=sharing
 
-Дипломная работа: https://drive.google.com/drive/folders/1kCdfhFmWd_qFuAOUYkF4iIREdd-GJWs0?ths=true
+Дипломная работа: https://docs.google.com/document/d/10gmYivGlZUpNp9Az1Gb6hZMIs0f68P_9Lp8I2AMUBoM/edit?usp=sharing
 
 ---
 ##### Мой телефон: +7(911)401-48-18
