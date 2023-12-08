@@ -38,8 +38,8 @@
 >> Дипломная работа
 Что надо тестировать?
 Продукт: Веб-приложение для учителей от Skyeng, мобильное приложение для учеников Skyeng.
-Сайт: https://student.skyeng.ru
-Мобильное приложение: https://apps.apple.com/ru/app/skyeng
+Сайт: student.skyeng.ru
+Мобильное приложение: apps.apple.com/ru/app/skyeng
 
 ---
 #### Мой Гугл диск:
